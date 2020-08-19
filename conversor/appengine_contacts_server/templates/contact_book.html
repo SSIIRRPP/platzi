@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <ul>
+
+        {% for contact in contacts%}
+        <li>
+            {{ contact.name }} <a href="/contacts/{{ contacts.key.id() }}">Ver más</a>
+        </li>
+
+    </ul>
+    <a href="/add">Añadir contacto</a>
+{% endblock %}
