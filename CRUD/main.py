@@ -1,19 +1,28 @@
+import sys
+import csv
+import os
 
-clients = [
-    {
-        'name' :'Pablo',
-        'company' : 'Google',
-        'email' : 'pablo@google.com',
-        'position' : 'Software Engineer',
-    }, 
-    {
-        'name' : 'Ricardio',
-        'company' :  'Facebook',
-        'email' : 'ricardio@facebook.com',
-        'position' : 'Data Engineer'
-    }
+CLIENT_TABLE = '.clients.csv'
+CLIENT_SCHEMA = ['name', 'company', 'email', 'position']
+clients = []
 
-]
+
+def _initialize_clients_from_storage():
+    with open(CLIENT_TABLE, mode='r') as f:
+        reader = csv.DictReader(f, fieldnames=CLIENT_SCHEMA)
+
+        for row in reader:
+            clients.append(row)
+
+
+def _save_cients_to_storage():
+    tmp_table_name = '{}.tmp'.format(CLIENT_TABLE)
+    with open(tmp_table_name, mode='w') as f:
+        writer = csv.DictWriter(f, fieldnames=CLIENT_SCHEMA)
+        writer.writerows(clients)
+
+    os.remove(CLIENT_TABLE)
+    os.rename(tmp_table_name, CLIENT_TABLE)
 
 
 def _get_client():
@@ -110,8 +119,7 @@ def search_client(client_name):
     global clients
     print('Searching client...')
     for i, a in enumerate(clients):
-        if client_name != a
-        .get('name'):
+        if client_name != a.get('name'):
             continue
         else:
             return True
@@ -132,6 +140,8 @@ def print_actions():
 
 
 if __name__ == '__main__':
+    _initialize_clients_from_storage()
+
     print_welcome()
     
     commando = ''
@@ -166,6 +176,9 @@ if __name__ == '__main__':
             break
         else:
             print('Invalid command.')
+
+
+    _save_cients_to_storage()
 
 
     
