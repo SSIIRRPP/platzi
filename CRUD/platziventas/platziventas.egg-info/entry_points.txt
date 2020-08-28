@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        platziventas=platziventas:cli
+    

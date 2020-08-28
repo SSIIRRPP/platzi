@@ -1,0 +1,8 @@
+platziventas.py
+setup.py
+platziventas.egg-info/PKG-INFO
+platziventas.egg-info/SOURCES.txt
+platziventas.egg-info/dependency_links.txt
+platziventas.egg-info/entry_points.txt
+platziventas.egg-info/requires.txt
+platziventas.egg-info/top_level.txt
