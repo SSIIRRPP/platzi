@@ -5,3 +5,5 @@ class Route{
     public $init;
     public $end;
 }
+
+?>
