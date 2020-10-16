@@ -1,14 +1,18 @@
-from flask import Flask, request, make_response, redirect, render_template, session
-from flask_bootstrap import Bootstrap
+from flask import request, make_response, redirect, render_template, session, url_for, flash
+import unittest
 
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
+from app import create_app
+from app.forms import LoginForm
 
-app.config['SECRET_KEY'] = 'SUPER SECRETO'
+app = create_app()
 
 
 todos = ['Comprar café', 'Enviar solicitud', 'Comer']
 
+@app.cli.command()
+def test():
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(tests)
 
 
 @app.errorhandler(404)
@@ -30,11 +34,25 @@ def index():
     return response
 
 
-@app.route('/hello')
+@app.route('/hello', methods=['GET','POST'])
 def hello():
     user_ip = session.get('user_ip')
+    login_form = LoginForm()
+    username = session.get('username')
+
     context = {
         'user_ip': user_ip,
-        'todos':todos,
+        'todos': todos,
+        'login_form': login_form,
+        'username': username
     }
+
+    if login_form.validate_on_submit():
+        username = login_form.username.data
+        session['username'] = username
+
+        flash('Nombre de usuario registrado con éxito.')
+
+        return redirect(url_for('index'))
+
     return render_template('hello.html', **context)
