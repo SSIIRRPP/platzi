@@ -13,7 +13,7 @@ def login():
         else:
             abort(401)
     else:
-        return redicrect(url_for('index'))
+        return redirect(url_for('index'))
 
 @app.route('/success')
 def success():
