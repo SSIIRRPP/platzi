@@ -1,13 +1,13 @@
-from flask import Flask, redirect, render_template, request, flash, url_for
+from flask import Flask, redirect, render_template, request, flash, url_for, session
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.secret_key='random string'
+app.secret_key='extremely secure random string xD'
 mail = Mail(app)
 
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_PORT'] = 25
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -26,6 +26,7 @@ def login():
         else:
 
             app.config['MAIL_USERNAME'] = request.form.get('username')
+            session['email_address'] = request.form.get('username')
             app.config['MAIL_PASSWORD'] = request.form.get('password')
             flash('You were successfully logged in! ')
             return render_template('send_email.html')
@@ -36,8 +37,8 @@ def login():
 def email_sender():
     if request.method == 'POST':
         msg = Message(request.form['subject'], 
-        sender = 'encuencu22@gmail.com', 
-        recipients = ['jorge.sirp@gmail.com'])
+        sender = session.get('username'),
+        recipients = request.form['sendto'])
         msg.body = request.form.get('message')
         mail.send(msg)
         return "Email Sent successfully"
