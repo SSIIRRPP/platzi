@@ -27,6 +27,13 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                {% if current_user.is_authenticated  %}
+                    <li><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></li>
+                {% endif %}
+                {% if current_user.is_anonymous %}
+                <li><a href="{{ url_for('auth.login') }}">Iniciar sesión</a></li>
+                <li><a href="{{ url_for('auth.sign_up') }}">Registrarse</a></li>
+                {% endif %}
                 <li><a href="{{ url_for('index') }}">Inicio</a></li>
                 <li><a href="https://platzi.com" target="_blank">Platzi</a></li>
             </ul>

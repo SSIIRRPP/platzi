@@ -3,11 +3,12 @@
 
 {% block title %}
     {{ super() }}
-    Login
+    Sign Up
 {% endblock %}
 
 {% block content %}
+    <h1>Resgistra una cuenta nueva</h1>
     <div class="container">
-        {{ wtf.quick_form(login_form) }}
+        {{ wtf.quick_form(sign_up_form) }}
     </div>
 {% endblock %}
