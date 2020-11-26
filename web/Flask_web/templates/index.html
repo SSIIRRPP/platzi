@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Document</title>
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}"/>
 </head>
 <body>
     <header>
         <div>
             <figure>
-                <img alt="logo" src="images/logo.png" />
+                <img alt="logo" src="{{ url_for('static', filename='images/logo.png') }}" />
                 
             </figure>
             <nav>

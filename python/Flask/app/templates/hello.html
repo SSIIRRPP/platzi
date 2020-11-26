@@ -14,7 +14,7 @@
     {% endif %}
 
     {% if user_ip %}
-        <h1>Hello world Flask, tu IP es: {{user_ip}}</h1>
+        <h1>¡Hola!, tu IP es: {{ user_ip }}</h1>
     {% else %}
         <a href="{{ url_for('index') }}">Ir a inicio</a>
     {% endif %}

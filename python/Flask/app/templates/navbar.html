@@ -23,6 +23,9 @@
                      style="max-width: 48px"
                      alt="Hola">
             </a>
+            {% if current_user.is_anonymous %}
+                <button><a href="{{ url_for('auth.sign_up') }}">Registrarse</a></button>
+            {% endif %}
         </div>
 
         <div class="navbar-collapse collapse">
