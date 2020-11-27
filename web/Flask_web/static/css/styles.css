@@ -34,6 +34,7 @@ body header div nav ul li a {
 
 body{
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 
 h1,
@@ -43,11 +44,11 @@ h4,
 h5,
 h6{
     font-family: 'Roboto Mono', sans-serif;
-    font-weight: 400; /* equivalente: 'normal' */
+    font-weight: bold; /* equivalente: 'normal' */
 }
 
 strong{
-    color: blue;
+    color: #026fff;
 }
 
 h1{
@@ -58,6 +59,10 @@ h1{
     text-decoration: none;
     color: white;
     margin: 100px 150px 70px 30px;
+}
+
+.portfolio {
+    background-color: #fafafa;
 }
 
 .project {
@@ -71,7 +76,9 @@ h1{
     border-style: solid; */
     border: 1px solid gray;
     border-radius: 10px;
-    margin: 10px 20px;
+    margin: 10px;
+    padding: 20px;
+    background: white;
 }
 
 .project-info{
