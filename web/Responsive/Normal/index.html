@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./static/css/styles.css">
+  <!--   <link rel="stylesheet" href="./static/css/media.css" media="screen and (max-width:768px"> 
+        METODO 2: CARGAR DOCUMENTO CSS SI SE CUMPLE LA CONDICIÓN-->  
+    <link rel="stylesheet" href="./static/css/styles.css">  <!-- MÉTODO 1: CARGAR REGLAS DE MEDIAQUERY EN LA HOJA CSS PREDETERMINADA -->
+    <!-- <style>
+        @media screen and (max-width: 768px) {
+            body {
+                border: 10px solid yellow;   METODO 3: CARGAR REGLAS CSS DESDE ETIQUETA <STYLE> SI SE CUMPLE LA CONDICIÓN.
+            }
+        }
+    </style> -->
     <title>Document</title>
     <link rel="icon" type="image/png" href="./static/images/favicon.png"/>
 </head>
 <body>
-    <header class="header">
+    <!-- <header class="header">
         <div class="container">
             <figure class="logo">
                 <img alt="logo" src="./static/images/logo.png" height="50"/>
@@ -30,15 +39,15 @@
                 </ul>
             </nav>
         </div>
-    </header>
-    <section class="hero">
+    </header> -->
+    <!-- <section class="hero">
         <div class="container">
             <h1>
                 <strong>¡Hola bro!</strong> Soy tu <strong>bro</strong>, <br> claramente xD. <br> Aprendiendo un poquito, <br> que es lo que toca.
             </h1>
             <img class="hero-image" src="./static/images/hero.jpg" width="500" height="300" alt="Imagen de portada">
         </div>
-    </section>
+    </section> -->
     <section id="portafolio" class="portfolio">
         <div class="container">
             <h2>Portafolio (Proyectos destacados)</h2>
@@ -55,11 +64,9 @@
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
                         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</small></p>
                 </div>
-                <div>
-                        <figure class="project-imageContainer">
-                            <img class="project-image" src="./static/images/platzi-video-react-native.png" alt="Proyecto del curso de react native" width="500">
-                        </figure>
-                </div>
+                    <figure class="project-imageContainer">
+                        <img class="project-image" src="./static/images/platzi-video-react-native.png" alt="Proyecto del curso de react native" width="500">
+                    </figure>
             </article>
             <article class="project">
                 <div class="project-info">
@@ -74,11 +81,9 @@
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
                         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</small></p>
                 </div>
-                <div>
-                        <figure class="project-imageContainer">
-                            <img class="project-image" src="./static/images/platzi-video-react-native.png" alt="Proyecto del curso de react native" width="500">
-                        </figure>
-                </div>
+                    <figure class="project-imageContainer">
+                        <img class="project-image" src="./static/images/platzi-video-react-native.png" alt="Proyecto del curso de react native" width="500">
+                    </figure>
             </article>
         </div>
     </section>
@@ -96,7 +101,7 @@
                     <p class="event-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0">Ver charla</a>
+                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0" target="_blank">Ver charla</a>
                 </div>                
             </article>
             <article class="event">
@@ -108,7 +113,7 @@
                     <p class="event-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0">Ver charla</a>
+                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0" target="_blank">Ver charla</a>
                 </div>                
             </article>
             <article class="event">
@@ -120,7 +125,7 @@
                     <p class="event-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0">Ver charla</a>
+                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0" target="_blank">Ver charla</a>
                 </div>                
             </article>
             <article class="event">
@@ -132,7 +137,7 @@
                     <p class="event-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0">Ver charla</a>
+                    <a class="event-url" href="https://www.youtube.com/watch?v=BIS7cWGgJg0" target="_blank">Ver charla</a>
                 </div>                
             </article>
         </div>
@@ -155,7 +160,7 @@
     </section>
     <footer class="footer">
         <div class="container">
-            <div>Curso de desarrollo web online 2018 <img src=".static/images/platzi.png" width="80px" alt="logo_platzi"></div>
+            <div>Curso de desarrollo web online 2018 <img src="./static/images/platzi.png" width="80px" alt="logo_platzi"></div>
             <div>Designed with ❤ by <a href="https://twitter.com/thespianartist">@thespianartist</a></div>
         </div>
     </footer>

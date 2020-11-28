@@ -6,6 +6,7 @@ valores */
 
 header {  /*selector de etiqueta (header, body, section, article, nav,...) */
     background-color: rgb(255, 0, 0);
+
 }
 
 /* Selectores descendentes:
@@ -84,6 +85,7 @@ h1{
     margin-bottom: 10px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* .project div {
@@ -97,7 +99,7 @@ h1{
 }
 
 .project-info {
-    width: 500px;
+    width: 50%;
 }
 
 .project strong {
@@ -124,7 +126,11 @@ h1{
 }
 
 .project-imageContainer {
-    width: 500px;
+    width: 50%;
+}
+
+.project-image {
+    width: 100%;
 }
 
 h2 {
@@ -146,6 +152,7 @@ h2 {
     align-items: center;
     padding: 0px 20px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .hero h1 {
@@ -163,6 +170,7 @@ h2 {
     justify-content: space-between;
     height: 70px;
     padding: 0px 20px;
+    flex-wrap: wrap;
 }
 
 .header a {
@@ -209,8 +217,8 @@ figure {
 
 .event {
 /*     border: 1px solid gray; */
-    margin: 10px;
-    width: 480px;
+    margin: 1%;
+    width: 48%;
     border-radius: 1.5em;
     overflow: hidden;
     flex-shrink: 0;
@@ -247,10 +255,12 @@ figure {
 .contact {
     background-color: #056fff;
     color: white;
-    height: 150px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
 .form-email-field {
@@ -279,6 +289,10 @@ figure {
     font-size: 20px;
     width: 100px;
     /* margin: 10px auto 0; */
+}
+
+.email {
+    font-size: inherit;
 }
 
 .form-email h3 {
@@ -316,6 +330,7 @@ figure {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .footer img {
@@ -328,11 +343,132 @@ figure {
 
 .container {
     /* border: 1px solid red; */
-    width: 1000px;
+    max-width: 1000px;
+    /* width: 100%; */
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
+}
+
+/* Empezar con la resolucion de dispositivo predeter-
+   minada para el tipo de proyecto (desktop o mobile) */
+
+@media screen and (max-width:1024px) {
+
+}
+
+@media screen and (max-width: 767.5px) {
+    .header {
+        display: block;
+        height: auto;
+    }
+
+    .header ul {
+        display: initial;
+    }
+
+    .header ul li {
+        height: 50px;
+    }
+
+    .header a {
+        justify-content: center;
+    }
+
+    .header .logo {
+        text-align: center;
+    }
+
+    .project {
+        display: block;
+    }
+
+    .project-imageContainer {
+        width: auto;
+        text-align: center;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+
+    .project-info {
+        width: auto;
+        font-size: 16px;
+    }
+
+    .project-title {
+        font-size: 1.4em;
+        margin-bottom: .3em;
+    }
+
+    .project-subtitle {
+        font-size: 1,2em;
+    }
+
+    .project-date {
+        font-size: 1em;
+    }
+
+    .project-url {
+        font-size: 1em;
+    }
+
+    .project-description {
+        font-size: .9em;
+    }
+
+    .project-subtitle, .project-date, .project-url {
+        margin: .3em 0;
+    }
+
+    .event {
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .event img {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .project-info {
+        font-size: 16px;
+    }
+
+    .event-detail {
+        margin: -2em .6em .6em;
+        padding: 1em;
+        font-size: .8em;
+    }
+
+    .contact {
+        height: auto;
+        padding: 1em;
+        display: block;
+        text-align: center;
+    }
+
+    .form-email-send {
+        margin: 1em auto;
+        font-size: inherit;
+    }
+
+    .form-email h3 {
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    .social {
+        display: flex;
+    }
 }
