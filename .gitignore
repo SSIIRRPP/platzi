@@ -5,6 +5,7 @@
 *.jpeg
 *.ico
 *.jfif
+*.mp4
 Pruebas flask/venv/
 Pruebas flask/__pycache__/
 python/__pycache__/
@@ -22,3 +23,4 @@ web/HTML/Flask_web/__pycache__/
 web/HTML/Flask_web/venv/
 web/Responsive/Flask_web/__pycache__/
 web/Responsive/Flask_web/venv/
+
