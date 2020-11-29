@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" href="./static/images/favicon.png"/>
 </head>
 <body>
-    <i class="icon-menu burguer-button"></i>
+    <i class="icon-menu burguer-button" id="burguer-menu"></i>
     <a class="icon-circle-up" href="#hero" id="arrow-up"></a>
     <header class="header">
         <div class="container">
@@ -171,5 +171,21 @@
             <div>Designed with ❤ by <a href="https://twitter.com/thespianartist">@thespianartist</a></div>
         </div>
     </footer>
+    <script>
+        console.log('jellllooouuuu')
+        const menu = document.querySelector('.menu');
+        console.log(menu);
+        const burguerButton = document.querySelector('#burguer-menu')
+        console.log(burguerButton);
+        
+        burguerButton.addEventListener('click', hideShow)
+        function hideShow() {
+            if(menu.classList.contains('is-active')){
+                menu.classList.remove('is-active')
+            }else{
+                menu.classList.add('is-active');
+            }
+        }
+    </script>
 </body>
 </html>
