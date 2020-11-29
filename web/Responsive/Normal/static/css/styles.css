@@ -168,7 +168,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: auto;
     padding: 0px 20px;
     flex-wrap: wrap;
 }
@@ -352,6 +352,7 @@ figure {
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
+    padding: 1em;
 }
 
 /* Empezar con la resolucion de dispositivo predeter-
@@ -463,6 +464,11 @@ figure {
 
     .form-email h3 {
         margin-top: 0;
+    }
+
+    .footer {
+        display: block;
+        text-align: center;
     }
 
 }
