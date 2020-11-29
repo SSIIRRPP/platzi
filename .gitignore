@@ -2,4 +2,23 @@
 *.png
 *.JPG
 *.svg
-.\Pruebas flask\venv
+*.jpeg
+*.ico
+*.jfif
+Pruebas flask/venv/
+Pruebas flask/__pycache__/
+python/__pycache__/
+python/venv/
+python/Flask/__pycache__/
+python/Flask/venv/
+python/Flask/app/__pycache__/
+python/Flask/tests/__pycache__/
+python/appengine_contacts_server/__pycache__/
+python/appengine_contacts_server/lib/
+python/lampara/__pycache__/
+HTML antiguo/Frontend/cv/Boletines/font-awesome/
+POO/Python/__pycache__/
+web/HTML/Flask_web/__pycache__/
+web/HTML/Flask_web/venv/
+web/Responsive/Flask_web/__pycache__/
+web/Responsive/Flask_web/venv/
