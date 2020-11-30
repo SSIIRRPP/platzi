@@ -158,10 +158,10 @@
                 <input class="form-email-send" type="submit" value="Enviar">
             </form>
             <div class="social">
-                <a href="https://twitter.com/JorgeSirp" class="social-link twitter"></a>
-                <a href="https://es-es.facebook.com/jorge.mananeslopez" class="social-link facebook"></a>
-                <a href="https://github.com/SSIIRRPP" class="social-link github"></a>
-                <a href="https://www.instagram.com/jorgesirp/?hl=es" class="social-link instagram"></a>
+                <a href="https://twitter.com/JorgeSirp" class="social-link twitter" target="_blank"></a>
+                <a href="https://es-es.facebook.com/jorge.mananeslopez" class="social-link facebook" target="_blank"></a>
+                <a href="https://github.com/SSIIRRPP" class="social-link github" target="_blank"></a>
+                <a href="https://www.instagram.com/jorgesirp/?hl=es" class="social-link instagram" target="_blank"></a>
         </div>
         </div>
     </section>
@@ -172,16 +172,31 @@
         </div>
     </footer>
     <script>
-        console.log('jellllooouuuu')
+        /* console.log('jellllooouuuu') */
+        /* console.log(); */
+        const ipad = window.matchMedia('screen and (max-width: 767.5px)');
         const menu = document.querySelector('.menu');
-        console.log(menu);
-        const burguerButton = document.querySelector('#burguer-menu')
-        console.log(burguerButton);
+        const burguerButton = document.querySelector('#burguer-menu');
+        /* console.log(menu); */
+        ipad.addListener(validation);
+
+        function validation (event) {
+            if (event.matches){
+                burguerButton.addEventListener('click', hideShow);
+                console.log('button activated');
+            }else{
+                burguerButton.removeEventListener('click', hideShow);
+                console.log('button deactivated');
+            }
+        }
+
+        validation(ipad);
+
+        /* console.log(burguerButton); */
         
-        burguerButton.addEventListener('click', hideShow)
         function hideShow() {
             if(menu.classList.contains('is-active')){
-                menu.classList.remove('is-active')
+                menu.classList.remove('is-active');
             }else{
                 menu.classList.add('is-active');
             }

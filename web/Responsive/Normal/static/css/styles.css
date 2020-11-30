@@ -105,7 +105,7 @@ h1{
     letter-spacing: -0.2px;
     text-transform: none;
     text-decoration: none;
-    color: white;
+    color: rgb(228, 228, 228);
     /* margin: 100px 150px 70px 30px; */
     margin: 0;
 }
@@ -200,6 +200,10 @@ h2 {
     padding: 0px 20px;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.hero .container {
+    padding-bottom: 0;
 }
 
 h1 {
@@ -298,7 +302,6 @@ figure {
     color: #056fff;
     padding: 5px 20px;
     text-decoration: none;
-    border-radius: ;
 }
 
 .contact {
@@ -452,6 +455,11 @@ figure {
 @media screen and (max-width:1024px) {
     .container {
         padding: 0 1em;
+        /* padding: 0; */
+    }
+
+    .portfolio .container {
+        padding: 0;
     }
 
     .hero {
@@ -475,6 +483,8 @@ figure {
         font-size: 1.7em;
         z-index: 2;
     }
+
+
 
 }
 
