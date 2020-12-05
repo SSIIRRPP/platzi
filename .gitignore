@@ -5,6 +5,7 @@
 *.jpeg
 *.ico
 *.jfif
+*.gif
 *.mp4
 Pruebas flask/venv/
 Pruebas flask/__pycache__/
