@@ -5,7 +5,20 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+    color: black;
+}
+
+figure {
+    margin: 0;
+}
+
+.home-body {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -13,10 +26,38 @@ html, body {
     right: 0;
 }
 
-a {
-    text-decoration: none;
-    display: inline;
-    color: black;
+.grid-container {
+    max-width: 980px;
+    margin: auto;
+}
+
+.grid-container-2 {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.header-grid-container-1 {
+    max-width: 1400px;
+    height: 50px;
+    margin: auto;
+    display: grid;
+}
+
+.header-grid-container-2 {
+    width: 100%;
+    box-shadow: 0 3px rgba(128, 128, 128, 0.576);
+}
+
+.header-grid-container-3 {
+    max-width: 1400px;
+    height: 90px;
+    margin: auto;
+    display: grid;
+}
+
+.profile-grid-container {
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* -------------------------------HEADER------------------------ */
@@ -31,7 +72,6 @@ header {
 header .header-social-bar {
     width: 100%;
     height: 50px;
-    display: grid;
     background-color: #47cfac;
 }
 
@@ -51,11 +91,14 @@ header .header-social-items {
     font-size: 18px;
 }
 
+header .header-social-items a:hover {
+    transform: scale(1.2);
+}
+
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 90px;
-    box-shadow: 0 1px gray;
 }
 
 nav .nav-logo-container {
@@ -65,6 +108,10 @@ nav .nav-logo-container {
 nav .nav-logo-container img {
     width: 200px;
     margin-top: 10px;
+}
+
+nav .nav-logo-container img:hover{
+    transform: scale(1.2);
 }
 
 nav .profile-link {
@@ -77,6 +124,10 @@ nav .profile-link {
 nav .profile-link a {
     color: black;
     border-bottom: 1px solid black;
+}
+
+nav .profile-link a:hover {
+    transform: scale(1.2);
 }
 
 /* ---------------MAIN--------------- */
@@ -140,3 +191,201 @@ main .home-main-button button:hover {
     transform: scale(1.2);
     border: 2px solid #3f3f3f;
 }
+
+/* ------------------------------BLOGS.HTML------------- */
+
+.blogs-main {
+    display: grid;
+}
+
+.blogs-news-container {
+    background-color: #e6e9ed;
+    padding: 0 50px 40px;
+}
+
+.blogs-main-new {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr;
+}
+
+.blogs-news-img-container {
+    grid-column: 1;
+    width: 80%;
+    object-fit: cover;
+}
+
+.blogs-news-img-container img {
+    width: 100%;
+}
+
+.blogs-news-info-container {
+    grid-column: 2;
+}
+
+.blogs-news-info-container p {
+    margin-bottom: 35px;
+}
+
+.blogs-news-info-container h3 {
+    margin-top: 0;
+}
+
+.blogs-posts-container {
+    padding: 0 50px 40px;
+}
+
+.blogs-posts-container h3 {
+    border-bottom: 1px solid #cdd2da;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.blogs-button {
+    border: 1px solid #47cfac;
+    padding: 10px 15px;
+    font-size: 10px;
+}
+
+.blogs-button:hover {
+    border: 1px solid #00b185;
+}
+
+.blogs-posts-container .post-container {
+    display: inline-block;
+    padding-left: 10px;
+    max-width: 30%;
+    margin-bottom: 50px;
+}
+
+.blogs-posts-container .post-container:hover {
+    transform: scale(1.05);
+}
+
+.blogs-posts-container .post-container p {
+    margin-bottom: 35px;
+}
+
+.blogs-posts-container .post-container img {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: #22272d;
+    border-top: 35px solid  #47cfac;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin-top: 30px;
+    font-size: large;
+}
+
+/* ------------------------------BLOGPOST--------------------------------------------------- */
+
+.blogpost-img-container {
+    padding: 0 50px 40px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.blogpost-img-container img {
+    width: 100%;
+}
+
+.blogpost-main-container {
+    padding: 0 50px 40px;
+}
+
+.blogpost-main-container h3 {
+    border-bottom: 1px solid #cdd2da;
+    padding-bottom: 30px;
+}
+
+.blogpost-main-container article h1 {
+    font-size: 32px;
+}
+
+.contact-grid-container {
+    width: 100%;
+    background-color: #3333333f;
+}
+
+.contact-main-container {
+    max-width: 1080px;
+    width: auto;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-main-container img {
+    width: 100px;
+}
+
+.contact-main-container a {
+    border-bottom: 2px solid #333333aa;
+    padding-bottom: 5px;
+}
+
+.contact-left, .contact-right {
+    display: flex;
+    align-items: center;
+}
+
+.contact-text {
+ height: 100%;
+ margin-left: 10px;
+}
+
+.contact-text p {
+    width: 200px;
+}
+
+/* ----------------------PROFILE---------------------------------- */
+
+.profile-main {
+    background-color: #33333320;
+}
+
+.profile-img {
+    width: 500px;
+}
+
+.profile-main-container {
+    width: auto;
+    display: flex;
+    padding: 5% 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-main-container p {
+    max-width: 500px;
+}
+
+.profile-projects h1 {
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 50px 40px;
+    border-bottom: 1px solid #31313157;
+}
+
+.projects-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 0 100px;
+}
+
+.project {
+    width: auto;
+    padding: 0 20px;
+}
+
