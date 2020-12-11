@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const jorge = {
+            nombre: 'Jorge',
+            apellido: 'Mañanes'
+        }
+
+        function saludar(saludo = 'Hola', emot) {
+            console.log(`${saludo}, mi nombre es ${this.nombre} ${emot} `)
+        }
+
+        const saludarAJorge = saludar.bind(jorge)
+
+        setTimeout(saludar.bind(jorge, 'klkkkk', ':)'), 1000)
+
+        saludar.call(jorge, 'jelous', ';)')
+
+        saludar.apply(jorge, ['holi', ':D'])
+
+    </script>
+</body>
+</html>
