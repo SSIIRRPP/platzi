@@ -25,7 +25,8 @@ fetch('https://randomuser.me/api/')
     const API_KEY = '&apikey=1e7080a0'
     const url_constructor_IMDbId = movie_ref => `${API_URL}?i=${movie_ref}${API_KEY}`
     const url_constructor_name = movie_ref => `${API_URL}?t=${movie_ref}${API_KEY}`
-    const peliculas = []
+    var peliculas = []
+    var friends = []
     const $form = document.getElementById('form') 
     const $home = document.getElementById('home')
     const $featuringContainer = document.getElementById('featuring')
@@ -64,9 +65,15 @@ fetch('https://randomuser.me/api/')
         })
         $featuringContainer.append($loader)
         const data = new FormData($form)
-        const peli = await getDataSearch(`${data.get('name')}`, url_constructor_name)
-        const HTMLString = renderFeaturing(peli)
-        $featuringContainer.innerHTML = HTMLString
+        try{
+            const peli = await getDataSearch(`${data.get('name')}`, url_constructor_name)
+            const HTMLString = renderFeaturing(peli)
+            $featuringContainer.innerHTML = HTMLString
+        }catch(error){
+            $loader.remove()
+            $home.classList.remove('search-active')
+            alert(error.message)
+        }
         
     })
 
@@ -81,19 +88,51 @@ fetch('https://randomuser.me/api/')
 
         const response = await fetch(url_method(movie_url))
         const data = await response.json()
-        return data
+        if (data.Response == 'True') {
+            return data
+        }else{
+            throw new Error('No se encontró ningun resultado :(')
+        }
     }
 
-    await getData('tt3896198', url_constructor_IMDbId)
-    await getData('tt0449088', url_constructor_IMDbId)
-    await getData('tt0099785', url_constructor_IMDbId)
-    await getData('tt0107290', url_constructor_IMDbId)
-    await getData('tt0119567', url_constructor_IMDbId)
-    await getData('tt0163025', url_constructor_IMDbId)
-    await getData('tt0369610', url_constructor_IMDbId)
-    await getData('tt4881806', url_constructor_IMDbId)
-    await getData('tt0383574', url_constructor_IMDbId)
-    await getData('tt0325980', url_constructor_IMDbId)
+    async function getFriends() {
+        const response = await fetch('https://randomuser.me/api/?results=8', {
+                'mode': 'cors',
+                'headers': {
+                'Access-Control-Allow-Origin': '*'
+                }
+        	})
+        const users = await response.json()
+        return users.results
+    }
+
+    async function cacheExists () {
+        if (window.localStorage.getItem('peliculas')) {
+            let local_peliculas = window.localStorage.getItem('peliculas')
+            peliculas = JSON.parse(local_peliculas)
+        }else{
+            await getData('tt3896198', url_constructor_IMDbId)
+            await getData('tt0449088', url_constructor_IMDbId)
+            await getData('tt0099785', url_constructor_IMDbId)
+            await getData('tt0107290', url_constructor_IMDbId)
+            await getData('tt0119567', url_constructor_IMDbId)
+            await getData('tt0163025', url_constructor_IMDbId)
+            await getData('tt0369610', url_constructor_IMDbId)
+            await getData('tt4881806', url_constructor_IMDbId)
+            await getData('tt0383574', url_constructor_IMDbId)
+            await getData('tt0325980', url_constructor_IMDbId)
+            localStorage.setItem('peliculas', JSON.stringify(peliculas))
+        }
+        if (window.localStorage.getItem('friends')){
+            let local_friends = window.localStorage.getItem('friends')
+            friends = JSON.parse(local_friends)
+        }else{
+            friends = await getFriends()
+            localStorage.setItem('friends', JSON.stringify(friends))
+        }
+    }
+
+    
 
     const $actionContainer = document.querySelector('#action')
     const $dramaContainer = document.getElementById('drama')
@@ -104,6 +143,7 @@ fetch('https://randomuser.me/api/')
     const $modalImage = $modal.querySelector('img')
     const $modalTitle = $modal.querySelector('h1')
     const $modalDescription = $modal.querySelector('p')
+    const $friendsList = document.getElementById('friend-list')
 
     function videoItemTemplate(movie) {
         return (
@@ -115,6 +155,19 @@ fetch('https://randomuser.me/api/')
               ${movie.Title}
             </h4>
           </div>`
+        )
+    }
+
+    function friendItemTemplate(friend) {
+        return(
+            `<li class="playlistFriends-item friend">
+                <a href="#">
+                    <img src="${friend.picture.thumbnail}" alt="echame la culpa" class="friend-img"/>
+                    <span class="friend-span">
+                    ${friend.name.first} ${friend.name.last}
+                    </span>
+                </a>
+            </li>`
         )
     }
 
@@ -157,18 +210,32 @@ fetch('https://randomuser.me/api/')
             const HTMLString = videoItemTemplate(movie)
             const movieElement = createTemplate(HTMLString)
             const image = movieElement.querySelector('img')
+            $container.append(movieElement)
             image.addEventListener('load', (event) => {
                 event.target.classList.add('fadeIn')
             })
-            $container.append(movieElement)
             addEventClick(movieElement)
         })
     }
 
+    function renderFriends(friends){
+        friends.forEach((friend) => {
+            const HTMLString = friendItemTemplate(friend)
+            const friendElement = createTemplate(HTMLString)
+            $friendsList.append(friendElement)
+        })
+    }
+
+    await cacheExists()
+
     renderMovieList(peliculas, $actionContainer)
     renderMovieList(peliculas, $dramaContainer)
     renderMovieList(peliculas, $animationContainer)
-    
+
+
+
+    renderFriends(friends)
+
 
 
     
