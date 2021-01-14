@@ -1,0 +1,8 @@
+extend componentes/plantilla.pug
+block contenidos
+    nav
+        h1 Menu
+        ul
+            each enlace in enlaces
+                li= enlace
+    +cont_principal(titulo)
