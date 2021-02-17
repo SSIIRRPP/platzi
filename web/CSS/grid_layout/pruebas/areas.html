@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Áreas</title>
+    <!-- <link rel="stylesheet" href="./static/css/main.css"> -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: 25% 50% 20%;
+            grid-template-rows: 300px 300px;
+            /* grid-template: filas / columnas; */
+            /* grid-template: 300px 100px 100px / 50% 200px 100px; */
+            /* grid-template: 300px 100px 100px / 1fr 1fr 1fr; */
+            /* grid-template: 300px 100px 100px / repeat(times, unit) */
+            grid-template: 100px 1fr 150px / 200px 1fr;
+            /* UNIDAD DE MEDIDA FR: DIVIDE FRACIONALMENTE 
+               SEGÚN EL Nº DE FRs POR ELEMENTO*/
+            /* funcion repeat(): REPRESENTAR ELEMENTOS RECURSIVAMENTE */
+            /* funcion minmax(): VALORES MÍNIMO Y MÁXIMO A TOMAR POR EL ELEMENTO */
+            /* grid-column-gap: 30px; OBSOLETO A FAVOR DE COLUMN-GAP: x;
+            grid-row-gap: 30px; OBSOLETO A FAVOR DE ROW-GAP: x; */
+            /* grid-gap: filas / columnas; */
+            /* grid-gap: 10px / 100px; OBSOLETO A FAVOR DE GAP: x x; */
+            gap: 10px;
+            height: 100vh;
+            grid-template-areas: "header header" /* se repite el nombre del */
+                                 "left contenido"/* área segun las columnas*/
+                                 "footer footer";/* que ocupe */
+
+        }
+
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 2px solid red;
+            /* margin-right: 10px;
+            margin-bottom: 10px */;
+        }
+
+        .item:nth-of-type(4){
+            background: blue;
+            overflow: auto;
+            /* display: subgrid; */
+            /* display: inline-grid; */
+            display: grid;
+            grid-template: 50px 50px 50px / 100px 100px 100px;
+        }
+        
+        .item .item {
+            background: yellow;
+        }
+
+        .header {
+            grid-area: header; /* se define el grid area según las areas
+                                  definidas en grid-template-areas */
+        }
+
+        .left {
+            grid-area: left;
+        }
+
+        .contenido {
+            grid-area: contenido;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item header">header</div>
+        <div class="item left">left</div>
+        <div class="item contenido">contenido</div>
+        <div class="item footer">footer</div>
+    </section>
+</body>
+</html>

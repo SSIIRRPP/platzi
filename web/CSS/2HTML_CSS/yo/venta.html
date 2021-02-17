@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/init_animation.css">
+    <link rel="stylesheet" href="css/static_animation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link href=“https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap” rel=“stylesheet”>
+    <title>Brand</title>
+</head>
+    <body>
+        <nav class="fadeInDown">
+            <div class="brand_image">
+                <a href="https://www.twitter.com/">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="nav_options">
+                <ul>
+                    <li> <a href="#">Faqs</a> </li>
+                    <li> <a href="#">Descripción</a> </li>
+                </ul>
+            </div>
+        </nav>
+       <div class="container">
+           <br>
+           <br>
+           <div class="row">
+               <div class="col-4">
+                    <div class="modulo-pago desc fadeInFast">
+                        <figure class="modulo-pago-image">
+                            <a href="https://placeholder.com"><img src="https://via.placeholder.com/150" alt="placeholder"></a>
+                        </figure>
+                        <h3>
+                            Producto 1
+                        </h3>
+                        <p>Miles de productos hay en el mercado, pero nada como una caja con gatitos</p>
+                    </div>
+               </div>
+               <div class="col-8">
+                   <div class="modulo-pago pay fadeInFast">
+                    <form action="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=54FGQC96LEEPG&lc=ES&item_name=Caja%20de%20gatitos&amount=1%2e00&currency_code=EUR&button_subtype=services&shipping=0%2e50&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted" method="POST">
+                        <label for="name">Nombre: </label>
+                        <br>
+                        <input type="text" placeholder="" name="name" class="data">
+                        <br>
+                        <label for="mail">Email: </label>
+                        <br>
+                        <input type="email" placeholder="" name="mail" class="data">
+                        <br>
+                        <label for="phone">Teléfono: </label>
+                        <br>
+                        <input type="text" placeholder="" name="phone" class="data">
+                        <input type="submit" class="product-button" name="submit" value="Confirmar pago">
+                    </form>
+                   </div>
+               </div>
+           </div>
+           <br>
+           <br>
+       </div>
+        <footer>
+            <p><a href="#">Brand ©</a></p>
+            <p><a href="#">contact@mail.com</a></p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
