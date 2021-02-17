@@ -1,4 +1,5 @@
 import '../css/index.css';
 
-document.body.innerHTML = '<p>Hola mundo desde webpack index</p>';
-console.log('funca')
+import text from './test.js';
+if (module.hot) module.hot.accept()
+text()
