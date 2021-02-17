@@ -1,4 +1,0 @@
-bla():
-    println('hola')
-
-bla()
