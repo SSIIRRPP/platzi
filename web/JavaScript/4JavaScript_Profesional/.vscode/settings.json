@@ -1,0 +1,29 @@
+{
+  "editor.semanticTokenColorCustomizations": {
+    "[Default Dark+]": {
+      "enabled": true,
+      "rules": {
+        "type": "#c46cff",
+        "namespace": "#0066eb",
+        "function": "#2ad400",
+        "variable": "#fd692f",
+        "property": "#4876f7",
+        "number": "#f2ff00",
+        "string": {
+          "foreground": "#d1c49a",
+          "italic": true
+        },
+        "comment": {
+          "foreground": "#546E7A",
+          "fontStyle": "italic"
+        },
+        "variable.readonly.defaultLibrary": "#A89F9B",
+        "macro": "#7E57C2",
+        "keyword": "#00ff80",
+        "operator": "#ffc400",
+        "punctuation": "#ffa600",
+        "type.modification": "#00ffe5"
+      }
+    }
+  }
+}
