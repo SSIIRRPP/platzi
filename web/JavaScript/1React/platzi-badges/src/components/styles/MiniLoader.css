@@ -1,0 +1,46 @@
+.mini-lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 38px;
+}
+
+.mini-lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation: mini-lds-grid 1.2s linear infinite;
+  display: flex;
+  align-content: center;
+}
+
+.mini-lds-grid div:nth-child(1) {
+  top: 10px;
+  left: 6px;
+  animation-delay: 0s;
+}
+
+.mini-lds-grid div:nth-child(2) {
+  top: 10px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+
+.mini-lds-grid div:nth-child(3) {
+  top: 10px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+
+@keyframes mini-lds-grid {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -25,8 +25,15 @@
 
 .Badges__buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 1rem;
+}
+
+.Badges__buttons-loading {
+  display: flex;
+  align-items: center;
+  height: 38px;
 }
 
 .BadgesList li {
